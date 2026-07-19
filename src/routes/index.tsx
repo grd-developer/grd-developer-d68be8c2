@@ -363,7 +363,9 @@ function Portfolio() {
                 <div className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${p.accent}`}>
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.06),transparent_60%)]" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-24 w-24 rounded-2xl border border-border/70 bg-surface/60 backdrop-blur-sm transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3" />
+                    <div className="flex h-24 w-24 items-center justify-center rounded-2xl border border-border/70 bg-surface/60 text-primary backdrop-blur-sm transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
+                      <p.icon className="h-10 w-10" strokeWidth={1.5} />
+                    </div>
                   </div>
                   <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/95 via-background/40 to-transparent p-5 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     <p className="text-sm text-muted-foreground">{p.description}</p>
