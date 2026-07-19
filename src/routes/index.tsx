@@ -257,13 +257,13 @@ function About() {
   return (
     <section id="about" className="border-t border-border/60">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[1fr_2fr] md:py-32">
-        <div>
+        <Reveal>
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
             About
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Who I Am</h2>
-        </div>
-        <div className="space-y-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+        </Reveal>
+        <Reveal delay={120} className="space-y-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
           <p>
             I am Ghulam Rasool, a dedicated developer and designer focused on building intuitive
             digital products. From automation scripts to complete mobile applications, I approach
@@ -282,7 +282,7 @@ function About() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
