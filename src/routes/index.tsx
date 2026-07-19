@@ -338,38 +338,39 @@ function Portfolio() {
           </p>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((p) => (
-            <article
-              key={p.title}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all hover:-translate-y-1 hover:border-primary/40"
-            >
-              <div className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${p.accent}`}>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.06),transparent_60%)]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="h-24 w-24 rounded-2xl border border-border/70 bg-surface/60 backdrop-blur-sm" />
+          {PROJECTS.map((p, i) => (
+            <Reveal key={p.title} delay={(i % 3) * 120}>
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:border-primary/60 hover:shadow-[0_24px_60px_-24px_oklch(0.78_0.135_195/0.4)]">
+                <div className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${p.accent}`}>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.06),transparent_60%)]" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="h-24 w-24 rounded-2xl border border-border/70 bg-surface/60 backdrop-blur-sm transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3" />
+                  </div>
+                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/95 via-background/40 to-transparent p-5 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <p className="text-sm text-muted-foreground">{p.description}</p>
+                  </div>
                 </div>
-                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/95 via-background/40 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <p className="text-sm text-muted-foreground">{p.description}</p>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-base font-semibold transition-colors duration-300 group-hover:text-primary">
+                    {p.title}
+                  </h3>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-border bg-surface px-2.5 py-0.5 text-[11px] text-muted-foreground transition-colors duration-300 group-hover:border-primary/40 group-hover:text-foreground"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <button className="mt-6 inline-flex items-center gap-1.5 self-start text-sm font-medium text-primary transition-all duration-300 hover:gap-3 hover:drop-shadow-[0_0_8px_oklch(0.78_0.135_195/0.6)]">
+                    View Details
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  </button>
                 </div>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-base font-semibold">{p.title}</h3>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-border bg-surface px-2.5 py-0.5 text-[11px] text-muted-foreground"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <button className="mt-6 inline-flex items-center gap-1.5 self-start text-sm font-medium text-primary transition-all hover:gap-2.5">
-                  View Details
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </div>
-            </article>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
