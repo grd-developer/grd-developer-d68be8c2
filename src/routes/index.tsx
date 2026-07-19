@@ -15,6 +15,13 @@ import {
   Linkedin,
   Menu,
   X,
+  Code2,
+  Dumbbell,
+  Globe,
+  FileText,
+  MapPin,
+  ShoppingCart,
+  type LucideIcon,
 } from "lucide-react";
 
 function Reveal({
