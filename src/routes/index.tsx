@@ -480,9 +480,7 @@ function Contact() {
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <a
-              href="https://wa.me/923080364133"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="whatsapp://send?phone=923080364133"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary hover:shadow-[0_0_24px_-4px_oklch(0.78_0.135_195/0.5)] sm:w-auto"
             >
               <WhatsAppIcon className="h-4 w-4 text-[oklch(0.78_0.15_150)] transition-transform duration-300 group-hover:scale-110" />
