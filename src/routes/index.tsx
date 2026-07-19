@@ -1,17 +1,75 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+  type ReactNode,
+} from "react";
 import {
   Smartphone,
   Layout,
   PenTool,
   Terminal,
   ArrowRight,
-  Github,
   Linkedin,
-  Mail,
   Menu,
   X,
 } from "lucide-react";
+
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setShown(true);
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: shown ? `${delay}ms` : "0ms" }}
+      className={`transition-all duration-700 ease-out ${
+        shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      } ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function FiverrIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M23 15.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM19 9h-5.06v-.28c0-.86.57-1.36 1.56-1.36H17V3.5h-1.9c-3.3 0-5.16 1.6-5.16 4.44V9H7v4h3v9h3.94v-9H17v9h2V9z" />
+    </svg>
+  );
+}
 
 export const Route = createFileRoute("/")({
   component: PortfolioPage,
