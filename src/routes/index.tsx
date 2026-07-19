@@ -82,7 +82,7 @@ export const Route = createFileRoute("/")({
   component: PortfolioPage,
 });
 
-const EMAIL = "hello@ghulamrasool.dev";
+const EMAIL = "elegantcanvas.web.app@gmail.com";
 
 const NAV_LINKS = [
   { href: "#home", label: "Home" },
