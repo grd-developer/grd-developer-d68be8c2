@@ -413,8 +413,6 @@ function Portfolio() {
 }
 
 function Contact() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
-
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -428,11 +426,9 @@ function Contact() {
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     );
 
-    // Assign to location.href so the browser hands the mailto: off to the
-    // native email client on the same tab instead of opening a blank popup.
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-    setStatus("sent");
   }
+
 
   return (
     <section id="contact" className="border-t border-border/60 bg-surface/40">
@@ -476,7 +472,7 @@ function Contact() {
               type="submit"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110 sm:w-auto"
             >
-              {status === "sent" ? "Opening your mail app…" : "Send Message"}
+              Send Message
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <a
