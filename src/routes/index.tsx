@@ -428,11 +428,9 @@ function Contact() {
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     );
 
-    window.open(
-      `mailto:${EMAIL}?subject=${subject}&body=${body}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
+    // Assign to location.href so the browser hands the mailto: off to the
+    // native email client on the same tab instead of opening a blank popup.
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     setStatus("sent");
   }
 
@@ -482,9 +480,7 @@ function Contact() {
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <a
-              href="https://wa.me/923080364133"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="whatsapp://send?phone=923080364133"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary hover:shadow-[0_0_24px_-4px_oklch(0.78_0.135_195/0.5)] sm:w-auto"
             >
               <WhatsAppIcon className="h-4 w-4 text-[oklch(0.78_0.15_150)] transition-transform duration-300 group-hover:scale-110" />
@@ -505,9 +501,7 @@ function Contact() {
           </span>
           <span className="hidden sm:inline">•</span>
           <a
-            href="https://wa.me/923080364133"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="whatsapp://send?phone=923080364133"
             className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline"
           >
             <WhatsAppIcon className="h-3.5 w-3.5" />
