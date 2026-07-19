@@ -301,17 +301,18 @@ function Services() {
           </h2>
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((s) => (
-            <div
-              key={s.title}
-              className="group relative rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
-                <s.icon className="h-5 w-5" />
+          {SERVICES.map((s, i) => (
+            <Reveal key={s.title} delay={i * 100}>
+              <div className="group relative h-full rounded-2xl border border-border bg-card p-6 shadow-card transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:border-primary/60 hover:shadow-[0_20px_60px_-20px_oklch(0.78_0.135_195/0.35)]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/25 group-hover:text-primary group-hover:shadow-[0_0_24px] group-hover:shadow-primary/40">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-base font-semibold transition-colors duration-300 group-hover:text-primary">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
               </div>
-              <h3 className="mt-5 text-base font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
