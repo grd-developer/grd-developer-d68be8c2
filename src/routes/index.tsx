@@ -405,11 +405,21 @@ function Contact() {
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    const subject = encodeURIComponent(String(form.get("subject") || "New project inquiry"));
+    const name = String(form.get("name") || "").trim();
+    const email = String(form.get("email") || "").trim();
+    const rawSubject = String(form.get("subject") || "New project inquiry").trim();
+    const message = String(form.get("message") || "").trim();
+
+    const subject = encodeURIComponent(`[Portfolio Inquiry] ${rawSubject}`);
     const body = encodeURIComponent(
-      `Name: ${form.get("name")}\nEmail: ${form.get("email")}\n\n${form.get("message")}`,
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     );
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+
+    window.open(
+      `mailto:${EMAIL}?subject=${subject}&body=${body}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
     setStatus("sent");
   }
 
