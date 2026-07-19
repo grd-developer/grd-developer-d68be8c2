@@ -115,13 +115,20 @@ const SERVICES = [
   },
 ];
 
-const PROJECTS = [
+const PROJECTS: {
+  title: string;
+  tags: string[];
+  description: string;
+  accent: string;
+  icon: LucideIcon;
+}[] = [
   {
     title: "Advanced Point-of-Sale Utility",
     tags: ["Flutter", "Dart", "UI/UX"],
     description:
       "Offline-first POS with inventory, receipts, and multi-terminal sync for retail operators.",
     accent: "from-teal-500/30 to-cyan-500/10",
+    icon: ShoppingCart,
   },
   {
     title: "Automation & Data Scraping Engine",
@@ -129,6 +136,7 @@ const PROJECTS = [
     description:
       "Headless scraping pipeline with scheduling, proxy rotation, and structured exports.",
     accent: "from-cyan-400/30 to-sky-500/10",
+    icon: Code2,
   },
   {
     title: "Fitness Coaching Mobile App",
@@ -136,6 +144,7 @@ const PROJECTS = [
     description:
       "Personalized training plans, progress tracking, and coach chat inside a premium mobile shell.",
     accent: "from-emerald-400/25 to-teal-500/10",
+    icon: Dumbbell,
   },
   {
     title: "SaaS Marketing Website",
@@ -143,6 +152,7 @@ const PROJECTS = [
     description:
       "High-conversion marketing surface with editorial layouts and sub-second load times.",
     accent: "from-sky-400/25 to-cyan-500/10",
+    icon: Globe,
   },
   {
     title: "Invoice Automation Suite",
@@ -150,6 +160,7 @@ const PROJECTS = [
     description:
       "End-to-end billing pipeline: PDF parsing, ledger sync, and Slack notifications.",
     accent: "from-teal-400/25 to-emerald-500/10",
+    icon: FileText,
   },
   {
     title: "Real Estate Listings App",
@@ -157,6 +168,7 @@ const PROJECTS = [
     description:
       "Map-first property discovery with saved searches and instant agent messaging.",
     accent: "from-cyan-500/25 to-teal-500/10",
+    icon: MapPin,
   },
 ];
 
