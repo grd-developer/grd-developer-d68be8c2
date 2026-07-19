@@ -431,10 +431,10 @@ function Contact() {
           </div>
           <button
             type="submit"
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:glow-teal hover:-translate-y-0.5 sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110 sm:w-auto"
           >
             {status === "sent" ? "Opening your mail app…" : "Send Message"}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </form>
 
@@ -484,6 +484,18 @@ function Field({
 }
 
 function Footer() {
+  const links = [
+    {
+      href: "https://www.linkedin.com/in/ghulam-rasool-dev/",
+      label: "LinkedIn",
+      Icon: (props: { className?: string }) => <Linkedin className={props.className} />,
+    },
+    {
+      href: "https://www.fiverr.com/android_hub/",
+      label: "Fiverr",
+      Icon: (props: { className?: string }) => <FiverrIcon className={props.className} />,
+    },
+  ];
   return (
     <footer className="border-t border-border/60">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
@@ -491,30 +503,18 @@ function Footer() {
           © 2026 Ghulam Rasool. All Rights Reserved.
         </p>
         <div className="flex items-center gap-6 text-xs text-muted-foreground">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          >
-            <Github className="h-3.5 w-3.5" /> GitHub
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          >
-            <Linkedin className="h-3.5 w-3.5" /> LinkedIn
-          </a>
-          <a
-            href="https://fiverr.com"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          >
-            <Mail className="h-3.5 w-3.5" /> Fiverr
-          </a>
+          {links.map(({ href, label, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 transition-all duration-300 hover:text-primary hover:drop-shadow-[0_0_8px_oklch(0.78_0.135_195/0.6)]"
+            >
+              <Icon className="h-3.5 w-3.5 transition-transform duration-300 group-hover:scale-110" />
+              {label}
+            </a>
+          ))}
         </div>
       </div>
     </footer>
