@@ -413,23 +413,6 @@ function Portfolio() {
 }
 
 function Contact() {
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const name = String(form.get("name") || "").trim();
-    const email = String(form.get("email") || "").trim();
-    const rawSubject = String(form.get("subject") || "New project inquiry").trim();
-    const message = String(form.get("message") || "").trim();
-
-    const subject = encodeURIComponent(`[Portfolio Inquiry] ${rawSubject}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    );
-
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-  }
-
-
   return (
     <section id="contact" className="border-t border-border/60 bg-surface/40">
       <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">
@@ -441,49 +424,20 @@ function Contact() {
             Let's Work Together
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground">
-            Have a project in mind? Drop a message or send an email directly.
+            Have a project in mind? Let's chat directly on WhatsApp to get started instantly.
           </p>
         </div>
 
-        <form
-          onSubmit={onSubmit}
-          className="mt-12 space-y-5 rounded-2xl border border-border bg-card p-6 shadow-card sm:p-8"
-        >
-          <div className="grid gap-5 sm:grid-cols-2">
-            <Field name="name" label="Name" placeholder="Your full name" required />
-            <Field name="email" label="Email" type="email" placeholder="you@company.com" required />
-          </div>
-          <Field name="subject" label="Subject" placeholder="Project inquiry" required />
-          <div>
-            <label htmlFor="message" className="mb-2 block text-xs font-medium text-muted-foreground">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={5}
-              required
-              placeholder="Tell me a bit about your project, timeline, and goals..."
-              className="w-full resize-none rounded-lg border border-border bg-input/40 px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/20"
-            />
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <button
-              type="submit"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110 sm:w-auto"
-            >
-              Send Message
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
-            <a
-              href="whatsapp://send?phone=923080364133"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary hover:shadow-[0_0_24px_-4px_oklch(0.78_0.135_195/0.5)] sm:w-auto"
-            >
-              <WhatsAppIcon className="h-4 w-4 text-[oklch(0.78_0.15_150)] transition-transform duration-300 group-hover:scale-110" />
-              Chat on WhatsApp
-            </a>
-          </div>
-        </form>
+        <div className="mt-12 flex justify-center">
+          <a
+            href="whatsapp://send?phone=923080364133"
+            className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110"
+          >
+            <WhatsAppIcon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+            Chat on WhatsApp
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
+        </div>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground sm:flex-row sm:gap-4">
           <span>
@@ -508,6 +462,7 @@ function Contact() {
     </section>
   );
 }
+
 
 function Field({
   name,
