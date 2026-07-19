@@ -78,6 +78,19 @@ function FiverrIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
   );
 }
 
+function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.004 21.785h-.005a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.511-5.26c.002-5.45 4.437-9.884 9.889-9.884 2.64.001 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.892 6.994c-.003 5.45-4.437 9.884-9.884 9.884zm8.413-18.297A11.815 11.815 0 0 0 12.004 0C5.463 0 .137 5.326.134 11.869a11.86 11.86 0 0 0 1.586 5.934L.057 24l6.335-1.652a11.87 11.87 0 0 0 5.607 1.428h.005c6.542 0 11.868-5.326 11.871-11.869a11.8 11.8 0 0 0-3.458-8.419z" />
+    </svg>
+  );
+}
+
 export const Route = createFileRoute("/")({
   component: PortfolioPage,
 });
@@ -460,22 +473,45 @@ function Contact() {
               className="w-full resize-none rounded-lg border border-border bg-input/40 px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/20"
             />
           </div>
-          <button
-            type="submit"
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110 sm:w-auto"
-          >
-            {status === "sent" ? "Opening your mail app…" : "Send Message"}
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <button
+              type="submit"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110 sm:w-auto"
+            >
+              {status === "sent" ? "Opening your mail app…" : "Send Message"}
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+            <a
+              href="https://wa.me/923080364133"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary hover:shadow-[0_0_24px_-4px_oklch(0.78_0.135_195/0.5)] sm:w-auto"
+            >
+              <WhatsAppIcon className="h-4 w-4 text-[oklch(0.78_0.15_150)] transition-transform duration-300 group-hover:scale-110" />
+              Chat on WhatsApp
+            </a>
+          </div>
         </form>
 
-        <div className="mt-8 text-center text-sm text-muted-foreground">
-          Or email me directly at:{" "}
+        <div className="mt-8 flex flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground sm:flex-row sm:gap-4">
+          <span>
+            Email:{" "}
+            <a
+              href={`mailto:${EMAIL}`}
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
+              {EMAIL}
+            </a>
+          </span>
+          <span className="hidden sm:inline">•</span>
           <a
-            href={`mailto:${EMAIL}`}
-            className="font-medium text-primary underline-offset-4 hover:underline"
+            href="https://wa.me/923080364133"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline"
           >
-            {EMAIL}
+            <WhatsAppIcon className="h-3.5 w-3.5" />
+            WhatsApp: +92 308 0364133
           </a>
         </div>
       </div>
