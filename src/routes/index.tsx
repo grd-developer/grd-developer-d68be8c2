@@ -428,11 +428,9 @@ function Contact() {
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     );
 
-    window.open(
-      `mailto:${EMAIL}?subject=${subject}&body=${body}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
+    // Assign to location.href so the browser hands the mailto: off to the
+    // native email client on the same tab instead of opening a blank popup.
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     setStatus("sent");
   }
 
