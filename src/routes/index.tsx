@@ -180,9 +180,10 @@ function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="group relative text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
             >
               {l.label}
+              <span className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-primary shadow-[0_0_8px] shadow-primary/60 transition-transform duration-300 group-hover:scale-x-100" />
             </a>
           ))}
         </nav>
