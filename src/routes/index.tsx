@@ -219,31 +219,31 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-hero-radial">
       <div className="mx-auto flex max-w-6xl flex-col items-start px-6 pt-24 pb-28 md:pt-32 md:pb-36">
-        <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted-foreground">
+        <span className="mb-6 inline-flex animate-fade-in items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted-foreground opacity-0 [animation-delay:80ms] [animation-fill-mode:forwards]">
           <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px] shadow-primary" />
           Available for freelance projects
         </span>
-        <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl md:text-7xl">
+        <h1 className="max-w-4xl animate-fade-in text-4xl font-bold tracking-tight opacity-0 [animation-delay:200ms] [animation-duration:800ms] [animation-fill-mode:forwards] sm:text-5xl md:text-7xl">
           Hi, I am{" "}
           <span className="bg-gradient-to-r from-primary to-cyan-300 bg-clip-text text-transparent">
             Ghulam Rasool.
           </span>
         </h1>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="mt-6 max-w-2xl animate-fade-in text-base leading-relaxed text-muted-foreground opacity-0 [animation-delay:450ms] [animation-duration:800ms] [animation-fill-mode:forwards] sm:text-lg">
           I am a professional Full-Stack App Developer and UI/UX Specialist crafting premium
           mobile and web experiences that blend speed, aesthetics, and functionality.
         </p>
-        <div className="mt-10 flex flex-wrap items-center gap-4">
+        <div className="mt-10 flex animate-fade-in flex-wrap items-center gap-4 opacity-0 [animation-delay:700ms] [animation-fill-mode:forwards]">
           <a
             href="#portfolio"
-            className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:glow-teal hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110"
           >
             View My Work
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-elevated"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-medium text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary"
           >
             Get in touch
           </a>
