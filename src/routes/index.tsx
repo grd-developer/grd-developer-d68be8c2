@@ -473,22 +473,45 @@ function Contact() {
               className="w-full resize-none rounded-lg border border-border bg-input/40 px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/20"
             />
           </div>
-          <button
-            type="submit"
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110 sm:w-auto"
-          >
-            {status === "sent" ? "Opening your mail app…" : "Send Message"}
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <button
+              type="submit"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110 sm:w-auto"
+            >
+              {status === "sent" ? "Opening your mail app…" : "Send Message"}
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+            <a
+              href="https://wa.me/923080364133"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary hover:shadow-[0_0_24px_-4px_oklch(0.78_0.135_195/0.5)] sm:w-auto"
+            >
+              <WhatsAppIcon className="h-4 w-4 text-[oklch(0.78_0.15_150)] transition-transform duration-300 group-hover:scale-110" />
+              Chat on WhatsApp
+            </a>
+          </div>
         </form>
 
-        <div className="mt-8 text-center text-sm text-muted-foreground">
-          Or email me directly at:{" "}
+        <div className="mt-8 flex flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground sm:flex-row sm:gap-4">
+          <span>
+            Email:{" "}
+            <a
+              href={`mailto:${EMAIL}`}
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
+              {EMAIL}
+            </a>
+          </span>
+          <span className="hidden sm:inline">•</span>
           <a
-            href={`mailto:${EMAIL}`}
-            className="font-medium text-primary underline-offset-4 hover:underline"
+            href="https://wa.me/923080364133"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline"
           >
-            {EMAIL}
+            <WhatsAppIcon className="h-3.5 w-3.5" />
+            WhatsApp: +92 308 0364133
           </a>
         </div>
       </div>
