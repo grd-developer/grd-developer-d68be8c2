@@ -501,9 +501,7 @@ function Contact() {
           </span>
           <span className="hidden sm:inline">•</span>
           <a
-            href="https://wa.me/923080364133"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="whatsapp://send?phone=923080364133"
             className="inline-flex items-center gap-1.5 font-medium text-primary underline-offset-4 hover:underline"
           >
             <WhatsAppIcon className="h-3.5 w-3.5" />
