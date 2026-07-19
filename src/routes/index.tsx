@@ -464,36 +464,7 @@ function Contact() {
 }
 
 
-function Field({
-  name,
-  label,
-  type = "text",
-  placeholder,
-  required,
-}: {
-  name: string;
-  label: string;
-  type?: string;
-  placeholder?: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label htmlFor={name} className="mb-2 block text-xs font-medium text-muted-foreground">
-        {label}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        maxLength={200}
-        className="w-full rounded-lg border border-border bg-input/40 px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-primary/60 focus:ring-2 focus:ring-primary/20"
-      />
-    </div>
-  );
-}
+
 
 function Footer() {
   const links = [
