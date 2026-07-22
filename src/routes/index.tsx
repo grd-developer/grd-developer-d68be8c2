@@ -197,11 +197,13 @@ function PortfolioPage() {
       <About />
       <Services />
       <Portfolio />
+      <GitHubSection />
       <Contact />
       <Footer />
     </main>
   );
 }
+
 
 function Nav() {
   const [open, setOpen] = useState(false);
