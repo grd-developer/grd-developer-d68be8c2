@@ -418,7 +418,91 @@ function Portfolio() {
   );
 }
 
+function GitHubSection() {
+  const stats = [
+    { icon: Code2, k: "50+", v: "Repositories" },
+    { icon: Star, k: "OSS", v: "Contributor" },
+    { icon: GitBranch, k: "Daily", v: "Commits" },
+  ];
+  return (
+    <section id="github" className="border-t border-border/60 bg-surface/40">
+      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-card sm:p-12">
+            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-32 -left-16 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
+            <div className="relative grid gap-10 md:grid-cols-[auto_1fr] md:items-center">
+              <div className="flex justify-center md:justify-start">
+                <div className="group relative">
+                  <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary to-cyan-300 opacity-60 blur-md transition-opacity duration-500 group-hover:opacity-100" />
+                  <img
+                    src="https://github.com/grd-developer.png"
+                    alt="Ghulam Rasool GitHub avatar"
+                    loading="lazy"
+                    className="relative h-32 w-32 rounded-full border border-border object-cover shadow-card transition-transform duration-500 group-hover:scale-105 sm:h-36 sm:w-36"
+                  />
+                  <span className="absolute -bottom-1 -right-1 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background text-primary shadow-card">
+                    <Github className="h-5 w-5" />
+                  </span>
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                  Open Source
+                </p>
+                <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                  Find Me on GitHub
+                </h2>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  I build and open-source clean, production-ready code across Flutter,
+                  React, and Python automation. Explore my repositories, follow along,
+                  or fork a project to kickstart your own.
+                </p>
+                <div className="mt-6 grid max-w-md grid-cols-3 gap-4">
+                  {stats.map((s) => (
+                    <div
+                      key={s.v}
+                      className="rounded-xl border border-border bg-surface/60 p-3 text-center"
+                    >
+                      <s.icon className="mx-auto h-4 w-4 text-primary" />
+                      <div className="mt-2 text-sm font-semibold text-foreground">
+                        {s.k}
+                      </div>
+                      <div className="text-[11px] text-muted-foreground">{s.v}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <a
+                    href="https://github.com/grd-developer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:glow-teal hover:brightness-110"
+                  >
+                    <Github className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                    Visit GitHub Profile
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
+                  <a
+                    href="https://github.com/grd-developer?tab=repositories"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-medium text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary"
+                  >
+                    Browse Repositories
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
+
   return (
     <section id="contact" className="border-t border-border/60 bg-surface/40">
       <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">
