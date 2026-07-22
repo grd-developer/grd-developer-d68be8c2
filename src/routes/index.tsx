@@ -21,7 +21,11 @@ import {
   FileText,
   MapPin,
   ShoppingCart,
+  Github,
+  Star,
+  GitBranch,
   type LucideIcon,
+
 } from "lucide-react";
 
 function Reveal({
