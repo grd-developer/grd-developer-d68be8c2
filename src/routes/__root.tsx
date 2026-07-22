@@ -88,14 +88,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Freelance mobile app development, web design, UI/UX, and automation — premium digital craft.",
+          "Portfolio of Ghulam Rasool — freelance full-stack mobile and web developer crafting premium, high-performance digital products.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Ghulam Rasool — Full-Stack App Developer & UI/UX Specialist" },
+      { name: "twitter:description", content: "Portfolio of Ghulam Rasool — freelance full-stack mobile and web developer crafting premium, high-performance digital products." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/dypycuLEmXR7wxY2BtCQv0pCkJ72/social-images/social-1784737827239-potpic.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/dypycuLEmXR7wxY2BtCQv0pCkJ72/social-images/social-1784737827239-potpic.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
